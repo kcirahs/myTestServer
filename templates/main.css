@@ -18,7 +18,7 @@ section {
 article {
     width: 50%;
     height: 100px;
-    background-color: yellow;
+    background-color: steelblue;
 }
 
 aside, footer {
@@ -26,3 +26,4 @@ aside, footer {
     height: 100px;
     background-color: green;
 }
+
