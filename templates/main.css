@@ -1,16 +1,17 @@
 * {
-    margin: 50px;
+    margin: 50px auto;
     background-color: black;
+    border-radius: 20px;
 }
 
 header {
-    width: 100%;
+    width: 90%;
     height: 100px;
-    background-color: red;
+    background-color: orchid;
 }
 
 section {
-    width: 100%;
+    width: 80%;
     height: 200px;
     background-color: blue;
 }
@@ -22,7 +23,7 @@ article {
 }
 
 aside, footer {
-    width: 100%;
+    width: 90%;
     height: 100px;
     background-color: green;
 }
