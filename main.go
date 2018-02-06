@@ -10,12 +10,11 @@ import (
 var tmpl *template.Template
 
 type addition struct {
-	n1  int
-	n2  int
-	sum int
+	N1  int
+	N2  int
+	Sum int
+	AnswerField string
 }
-
-var emails []string
 
 func init() {
 	tmpl = template.Must(template.ParseGlob("templates/*.html"))
@@ -25,8 +24,9 @@ func generateAdd() (addition) {
 	n1 := rand.Intn(10)
 	n2 := rand.Intn(10)
 	sum := n1 +n2
-
+	return addition{n1, n2, sum, ""}
 }
+
 func rootHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl.ExecuteTemplate(w, "index.html", nil)
 
@@ -37,12 +37,13 @@ func aboutHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
-	tmpl.ExecuteTemplate(w, "contact.html", emails)
+	a := generateAdd()
+	a.AnswerField = r.FormValue("answer")
+
+	tmpl.ExecuteTemplate(w, "contact.html", a)
 }
 
 func main() {
-	emails = append(emails, "someguy@gmail.com")
-
 	http.HandleFunc("/", rootHandler)
 	http.Handle("/css/", http.StripPrefix("/css", http.FileServer(http.Dir("./css"))))
 	http.Handle("/favicon.ico", http.NotFoundHandler())
