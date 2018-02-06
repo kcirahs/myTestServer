@@ -3,23 +3,30 @@ package main
 import (
 	"html/template"
 	"net/http"
+	"log"
+	"math/rand"
 )
 
 var tmpl *template.Template
-var tmplCSS *template.Template
+
+type addition struct {
+	n1  int
+	n2  int
+	sum int
+}
 
 var emails []string
 
 func init() {
 	tmpl = template.Must(template.ParseGlob("templates/*.html"))
-	tmplCSS = template.Must(template.ParseGlob("templates/*.css"))
 }
 
-func styleHandler(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "text/css; charset=utf-8")
-	tmplCSS.Execute(w, nil)
-}
+func generateAdd() (addition) {
+	n1 := rand.Intn(10)
+	n2 := rand.Intn(10)
+	sum := n1 +n2
 
+}
 func rootHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl.ExecuteTemplate(w, "index.html", nil)
 
@@ -37,10 +44,10 @@ func main() {
 	emails = append(emails, "someguy@gmail.com")
 
 	http.HandleFunc("/", rootHandler)
-	http.HandleFunc("/main.css", styleHandler)
+	http.Handle("/css/", http.StripPrefix("/css", http.FileServer(http.Dir("./css"))))
 	http.Handle("/favicon.ico", http.NotFoundHandler())
 	http.HandleFunc("/about/", aboutHandler)
 	http.HandleFunc("/contact/", contactHandler)
 
-	http.ListenAndServe(":8080", nil)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
