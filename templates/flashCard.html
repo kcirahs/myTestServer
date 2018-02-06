@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flash Card Game</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<section><div class="bottomLine">
+    {{.N1}}<br>
+    +{{.N2}}</div>
+
+    <form method="POST" action="/flashCard/">
+        <label for="next">?</label>
+        <input type="hidden" name="n1" value={{.N1}}>
+        <input type="hidden" name="n2" value={{.N2}}>
+        <input type="hidden" name="sum" value={{.Sum}}>
+        <input type="submit" value="NEXT" id="next" hidden>
+
+
+    </form>
+</section>
+
+</body>
+</html>

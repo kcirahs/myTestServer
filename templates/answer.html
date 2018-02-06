@@ -6,15 +6,17 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-<section><div class="bottomLine">{{.N1}}<br>
-    +{{.N2}}</div>
-    <br>
-    {{.Sum}}
-    <form method="post" action="contact.html">
+<section>
+    <div class="bottomLine">
+        {{.N1}}<br>
+        +{{.N2}}</div>
+    <form method="GET" action="/flashCard/">
+        <label for="next">{{.Sum}}</label>
+        <input type="submit" value="NEXT" id="next" hidden>
 
 
     </form>
 </section>
-<footer></footer>
+
 </body>
 </html>
