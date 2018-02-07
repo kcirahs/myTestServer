@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=300, initial-scale=1">
+
     <title>Flash Card Game</title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-<section><div class="bottomLine">
+<section>
+    <div class="bottomLine">
     {{.N1}}<br>
-    +{{.N2}}</div>
+        +{{.N2}}</div>
 
     <form method="POST" action="/flashCard/">
         <label for="next">?</label>
