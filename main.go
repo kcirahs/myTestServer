@@ -6,6 +6,7 @@ import (
 	"log"
 	"math/rand"
 	"strconv"
+	"time"
 )
 
 var tmpl *template.Template
@@ -18,14 +19,16 @@ type addition struct {
 }
 
 var AddExample addition
+var r1 *rand.Rand
 
 func init() {
 	tmpl = template.Must(template.ParseGlob("templates/*.html"))
+	r1 = rand.New(rand.NewSource(time.Now().UnixNano()))
 }
 
 func generateAdd() (addition) {
-	n1 := rand.Intn(10)
-	n2 := rand.Intn(10)
+	n1 := r1.Intn(10)
+	n2 := r1.Intn(10)
 	sum := n1 + n2
 	return addition{n1, n2, sum}
 }
