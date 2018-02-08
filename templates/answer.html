@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=300, initial-scale=1">
-    <title>Flash Card Game</title>
-    <link rel="stylesheet" href="/css/main.css">
-</head>
+{{template "fcHead"}}
 <body>
 <section>
     <div class="bottomLine">
-        {{.N1}}<br>
+    {{.N1}}<br>
         +{{.N2}}</div>
+
     <form method="GET" action="/flashCard/">
-        <label for="next">{{.Sum}}</label>
+        <label class="push" for="next">{{.Sum}}</label>
         <input type="submit" value="NEXT" id="next" hidden>
 
 
     </form>
 </section>
 
+{{template "fcFooter"}}
 </body>
 </html>

@@ -1,7 +1,15 @@
+header, footer, section {
+    margin: 0 auto;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+
 header {
     width: 90%;
     height: 100px;
-    background-color: orchid;
+    background-color: darkorchid;
 }
 
 article {
@@ -13,27 +21,25 @@ article {
 aside, footer {
     width: 90%;
     height: 100px;
-    background-color: green;
+    background-color: lightsteelblue;
 }
+
 section {
-    width: 2.2em;
-    height: 3.7em;
+    width: 90%;
     margin: 10px auto;
     border-radius: 15px;
     background-color: steelblue;
-    font-size: 80pt;
-    text-align: right;
     font-family: "Arial Black", sans-serif;
-    box-sizing: border-box;
-    padding: 20px;
     line-height: 1.1em;
 }
+
 form {
     height: 100px;
     margin: 0;
     display: inline;
 
 }
+
 .bottomLine {
     background-color: steelblue;
     border-bottom: 20px black solid;

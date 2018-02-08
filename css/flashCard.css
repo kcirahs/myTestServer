@@ -1,0 +1,34 @@
+header, footer, section {
+    width: 260px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+header {
+    height: 50px;
+    background-color: darkorchid;
+}
+
+footer {
+    height: 50px;
+    background-color: lightsteelblue;
+}
+
+section {
+    height: 400px;
+    background-color: steelblue;
+    font-size: 80pt;
+    text-align: right;
+    font-family: "Arial Black", sans-serif;
+    line-height: 1.1em;
+}
+
+.bottomLine {
+    border-bottom: 20px black solid;
+}
+
+.push{
+    color: darkslategrey;
+}
