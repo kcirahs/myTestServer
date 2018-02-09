@@ -3,10 +3,10 @@
 <section>
     <div class="bottomLine">
     {{.N1}}<br>
-        +{{.N2}}</div>
+    {{.Operator}}{{.N2}}</div>
 
     <form method="GET" action="/flashCard/">
-        <label class="push" for="next">{{.Sum}}</label>
+        <label class="push" for="next">{{.Answer}}</label>
         <input type="submit" value="NEXT" id="next" hidden>
 
 
