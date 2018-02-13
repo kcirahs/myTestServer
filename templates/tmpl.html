@@ -10,12 +10,12 @@
 {{end}}
 
 {{define "fcFooter"}}
-<footer><a href="/">Home</a> | <a href="/flashCard/">New</a></footer>
+<footer><a href="/">Home</a> | <a href="/flashCard/add">Add</a> | <a href="/flashCard/diff">Subtract</a></footer>
 {{end}}
 
-        {{define "footer"}}
-        <footer><a href="/about/">about</a> | <a href="/signup/">sign up</a></footer>
-                {{end}}
+{{define "footer"}}
+<footer><a href="/">Home</a> | <a href="/about/">about</a> | <a href="/signup/">sign up</a></footer>
+{{end}}
 
 {{define "welcome"}}
 <header>
@@ -23,7 +23,7 @@
     Welcome, {{.}}!
 {{else}}
     Welcome!
-    {{/*<div>
+{{/*<div>
         <form method="post" action="/logon/">
             <input type="text" name="username" placeholder="username"><br>
             */}}{{/*<input type="password" name="password" placeholder="password"><br>*/}}{{/*

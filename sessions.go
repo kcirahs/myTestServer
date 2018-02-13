@@ -2,7 +2,6 @@ package main
 
 import (
 	"net/http"
-	"fmt"
 	"github.com/google/uuid"
 )
 
@@ -38,7 +37,6 @@ func signupProcess(w http.ResponseWriter, r *http.Request) {
 	//do you have cookie?
 	c, err := r.Cookie("session")
 	if err != nil {
-		fmt.Println("new cookie")
 		sID := uuid.New()
 		c = &http.Cookie{
 			Name:  "session",
@@ -60,7 +58,6 @@ func signupProcess(w http.ResponseWriter, r *http.Request) {
 
 	dbSessions[c.Value] = un
 	u := user{un, f, l}
-	fmt.Println("store user: ", u, c.Value)
 	dbUsers[un] = u
 
 	http.Redirect(w, r, "/", http.StatusSeeOther)

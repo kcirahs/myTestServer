@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"log"
 	"github.com/kcirahs/myTestServer/utils/flashCard"
-	"fmt"
 )
 
 type user struct {
@@ -58,6 +57,7 @@ func aboutHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func flashCardHandler(w http.ResponseWriter, r *http.Request) {
+	//if showing answer
 	if r.Method == http.MethodPost {
 		err := r.ParseForm()
 		if err != nil {
@@ -65,11 +65,18 @@ func flashCardHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		m := r.Form
 		PreExample := flashCard.ParsePrevious(m["PreExample"][0])
-		fmt.Println(PreExample)
 		tmpl.ExecuteTemplate(w, "answer.html", PreExample)
 		return
 	}
-	Example := flashCard.GenerateDiff()
-	//Example := flashCard.GenerateAdd()
+	//creating new card
+	var Example flashCard.MathProblem
+	switch r.URL.Path {
+	case "/flashCard/diff":
+		Example = flashCard.GenerateDiff()
+	case "/flashCard/add":
+		Example = flashCard.GenerateAdd()
+	default:
+		Example = flashCard.GenerateAdd()
+	}
 	tmpl.ExecuteTemplate(w, "flashCard.html", Example)
 }
