@@ -1,4 +1,4 @@
-package utils
+package flashCard
 
 import (
 	"math/rand"

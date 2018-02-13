@@ -9,13 +9,17 @@ header, footer, section {
 header {
     width: 90%;
     height: 100px;
-    background-color: darkorchid;
+    font-size: 20pt;
+    color: #2e589c;
+    background-color: #7aa8de;
 }
 
 article {
     width: 50%;
     height: 100px;
-    background-color: steelblue;
+    alignment: right;
+    display: inline-block;
+
 }
 
 aside, footer {
@@ -36,7 +40,8 @@ section {
 form {
     height: 100px;
     margin: 0;
-    display: inline;
+    display: inline-block;
+    padding: 15px;
 
 }
 

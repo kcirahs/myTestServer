@@ -12,3 +12,23 @@
 {{define "fcFooter"}}
 <footer><a href="/">Home</a> | <a href="/flashCard/">New</a></footer>
 {{end}}
+
+        {{define "footer"}}
+        <footer><a href="/about/">about</a> | <a href="/signup/">sign up</a></footer>
+                {{end}}
+
+{{define "welcome"}}
+<header>
+{{if .}}
+    Welcome, {{.}}!
+{{else}}
+    Welcome!
+    {{/*<div>
+        <form method="post" action="/logon/">
+            <input type="text" name="username" placeholder="username"><br>
+            */}}{{/*<input type="password" name="password" placeholder="password"><br>*/}}{{/*
+            <input type="submit">
+        </form>
+    </div>*/}}
+{{end}}</header>
+{{end}}

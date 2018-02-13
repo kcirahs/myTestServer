@@ -6,14 +6,27 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-
-<header>Welcome!</header>
+<header>
+{{if .First}}
+    Welcome, {{.First}}!
+{{else}}
+    Welcome!
+{{/*<div>
+        <form method="post" action="/logon/">
+            <input type="text" name="username" placeholder="username"><br>
+            */}}{{/*<input type="password" name="password" placeholder="password"><br>*/}}{{/*
+            <input type="submit">
+        </form>
+    </div>*/}}
+{{end}}</header>
 
 <section>
-    <article><div class="icon"><a href="/flashCard/">Flash Card Game</a></div></article>
+    <div class="icon">
+        <article><a href="/flashCard/">Flash Card Game</a></article>
+    </div>
 </section>
 
-<footer><a href="/about/">about</a></footer>
+{{template "footer"}}
 
 </body>
 </html>
