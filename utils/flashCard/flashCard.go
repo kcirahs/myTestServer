@@ -12,6 +12,7 @@ const (
 	minus = "-"
 )
 
+//MathProblem provides fields necessary to create a math flash card.
 type MathProblem struct {
 	N1       int
 	N2       int
